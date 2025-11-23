@@ -1,0 +1,16 @@
+[
+  {
+    "url": "https://example.com",
+    "status": 0,
+    "latency": 1200889949,
+    "error": "Get \"https://example.com\": context deadline exceeded",
+    "timestamps": "2025-11-18T05:47:49.685570698-05:00"
+  },
+  {
+    "url": "https://httpbin.org/delay/1",
+    "status": 0,
+    "latency": 1200971664,
+    "error": "Get \"https://httpbin.org/delay/1\": context deadline exceeded",
+    "timestamps": "2025-11-18T05:47:49.685726588-05:00"
+  }
+]

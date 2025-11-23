@@ -1,0 +1,6 @@
+ 
+# from ./pinger
+go run ./cmd/pinger --concurrency 8 --timeout 1200ms \
+  https://example.com \
+  https://httpbin.org/status/200 \
+  https://httpbin.org/delay/2
