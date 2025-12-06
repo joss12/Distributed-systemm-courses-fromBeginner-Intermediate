@@ -1,0 +1,7 @@
+ curl -X PUT localhost:8087/kv/name \                     
+  -d '{"value":"golang"}' \
+  -H "Content-Type:application/json"
+
+curl -X DELETE localhost:8087/kv/name -i 
+
+curl localhost:8087/kv/name 
