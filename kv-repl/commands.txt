@@ -1,0 +1,29 @@
+## Open 3 terminals within the project
+
+Terminal 1:
+Execute this commands:
+ADDR=127.0.0.1:9001 PEERS=127.0.0.1:9001,127.0.0.1:9002 go run ./cmd/kvnode
+
+
+Terminal 2:
+Execute this commands:
+ADDR=127.0.0.1:9002 PEERS=127.0.0.1:9001,127.0.0.1:9002 go run ./cmd/kvnode
+
+
+Now you can send the first request from the terminal 3:
+curl -X PUT http://127.0.0.1:9001/kv/color -d '{"value":"blue"}'
+
+
+You should now see logs:
+[Store] apply: <uuid> color blue
+[Broadcast] firing: ...
+[Broadcast] sending to peer: 127.0.0.1:9002
+[Broadcast] SUCCESS sending to 127.0.0.1:9002
+
+Read from node 2:
+curl http://127.0.0.1:9002/kv/color
+
+Should return:
+{"value":"blue"}
+
+
